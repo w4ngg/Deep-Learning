@@ -1,0 +1,32 @@
+ # --- Ignore datasets ---
+data/
+dataset/
+datasets/
+VinaFood21/
+*.zip
+*.tar
+*.rar
+
+# --- Ignore model weights ---
+*.pth
+*.pt
+*.ckpt
+
+# --- Ignore intermediate files ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Ignore IDE / OS files ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Ignore output logs ---
+logs/
+runs/
+outputs/
+checkpoints/
+

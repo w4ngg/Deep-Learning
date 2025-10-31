@@ -3,6 +3,7 @@ from utils.data import get_MNIST_data, get_VNFood21_data
 from models.GoogleLeNet import GoogleLeNet
 from models.LeNet import LeNet
 from models.pretrained_resnet import PretrainedResnet as ResNet50
+from models.ResNet18 import ResNet18
 #from models.ResNet18 import RestNet18
 import torch.optim as optim
 import torch.nn as nn
@@ -12,15 +13,19 @@ def get_exercise(name):
     if name =="ex1":
         model = LeNet()
         train_loader,val_loader,test_loader = get_MNIST_data(batch_size=32,num_workers=2)
+        print('Model LeNet for MNIST')
     elif name =="ex2":
         model = GoogleLeNet(num_classes=21)
         train_loader,val_loader,test_loader = get_VNFood21_data(batch_size=32,num_workers=2)
+        print('Model GoogleLeNet for VinaFood21')
     elif name =="ex3":
-        model = RestNet18(num_classes=21)
+        model = ResNet18(num_classes=21)
         train_loader,val_loader,test_loader = get_VNFood21_data(batch_size=32,num_workers=2)
+        print('Model ResNet18 for VinaFood21')
     else:
         model = ResNet50()
         train_loader,val_loader,test_loader = get_VNFood21_data(batch_size=32,num_workers=2)
+        print('Model ResNet50 for VinaFood21')
     return model, train_loader,val_loader,test_loader
 
 def main():
@@ -31,8 +36,10 @@ def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
     model,train_loader,val_loader,test_loader = get_exercise(args.exercise)
-    optimizer = optim.Adam(model.parameters(),lr=0.01)
+    model.to(device)
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4, weight_decay=1e-4)
     criterion = nn.CrossEntropyLoss()
+
     
     trainer = Trainer(model,optimizer,criterion,device)
     EPOCHS = 5

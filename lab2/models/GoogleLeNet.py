@@ -91,5 +91,4 @@ class GoogleLeNet(nn.Module):
         x = torch.flatten(x, 1)
         x = self.dropout(x)
         x = self.fc(x)
-        x = self.softmax(x)
         return x

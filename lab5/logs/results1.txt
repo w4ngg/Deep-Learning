@@ -1,0 +1,9 @@
+[2026-01-02 03:11:58.964437] Running TASK 1: Domain Classification
+[2026-01-02 03:14:33.848027] Running TASK 1: Domain Classification
+[2026-01-02 03:15:59.415789] Running TASK 1: Domain Classification
+[2026-01-02 03:19:58.741135] Running TASK 1: Domain Classification
+[2026-01-02 03:28:08.096433] Epoch 1 | Train Loss: 0.6836
+[2026-01-02 04:35:38.242999] Running TASK 1: Domain Classification
+[2026-01-02 04:43:46.600751] Epoch 1 | Train Loss: 0.7094
+[2026-01-02 04:44:05.048977] [DEV] Acc: 0.8650 | F1: 0.8148
+[2026-01-02 04:44:13.819991] [TEST] Acc: 0.8324 | F1: 0.7750

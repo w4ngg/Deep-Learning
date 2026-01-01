@@ -1,0 +1,8 @@
+[2026-01-02 04:08:33.627366] Running TASK 2: Sequence Labeling (NER)
+[2026-01-02 04:20:19.059775] Epoch 1 | Train Loss: 0.7918
+[2026-01-02 05:09:50.482863] Running TASK 2: Sequence Labeling (NER)
+[2026-01-02 05:16:34.177096] Epoch 1 | Train Loss: 0.8130
+[2026-01-02 05:16:50.129453] [DEV] Token Acc: 0.8024 | NER F1: 0.3366 
+
+[2026-01-02 05:17:12.844416] [TEST] Token Acc: 0.7957 | NER F1: 0.3291 
+
